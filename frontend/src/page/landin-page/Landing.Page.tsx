@@ -2,7 +2,7 @@ import { ShoppingBag, Upload, TrendingUp, StarIcon } from 'lucide-react';
 import type { LandingPageInterface } from '../../types/interfaces';
 import Navbar from '../../components/navbar/NavBar';
 import '../../style/landingPage.css'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const images = {
   First_Src: [
@@ -33,6 +33,33 @@ const images = {
 
 export default function LandingPage ({onNavigate}: LandingPageInterface) {
   const [openmodal, setOpenModal] = useState<null | 'terms' | 'privacy' | 'contact'>(null)
+
+  const $qrselector = <T extends Element>(selector: string): NodeListOf<T> => {
+    return document.querySelectorAll(selector);
+  }
+
+  useEffect(() => {
+    const scrollingAnimationDefault = $qrselector<HTMLElement>('.scrolling-reveal-animation');
+    const scrollingAnimationRight = $qrselector<HTMLElement>('.scrolling-reveal-animation-right');
+    const scrollingAnimationLeft = $qrselector<HTMLElement>('.scrolling-reveal-animation-left');
+    const scrollingAnimationContactImgContainer = $qrselector<HTMLElement>('.contact-container'); 
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    )
+    scrollingAnimationDefault.forEach((el) => observer.observe(el) );
+    scrollingAnimationRight.forEach((el) => observer.observe(el) );
+    scrollingAnimationLeft.forEach((el) => observer.observe(el) );
+    scrollingAnimationContactImgContainer.forEach((el) => observer.observe(el) );
+
+    return () => observer.disconnect();
+  })
   return (
 
       <div className="landing">
@@ -43,19 +70,19 @@ export default function LandingPage ({onNavigate}: LandingPageInterface) {
           {/* Hero Section */}
           <div className="hero">
 
-            <div className='img-hero-container'>
+            <div className='img-hero-container scrolling-reveal-animation'>
               <img src="/assets/littleboy.png" alt="little boy" />
             </div>
              
-            <h1 className="hero-title">WELCOME TO GRAPIXIE</h1>
+            <h1 className="hero-title scrolling-reveal-animation">WELCOME TO GRAPIXIE</h1>
 
-            <p className="hero-description">
+            <p className="hero-description scrolling-reveal-animation">
               The ultimate marketplace for high-quality sprite sheets, 2D graphics, and 3D graphics.
               Buy, sell, and discover amazing digital art assets for your games and
               projects.
             </p>
 
-            <div className="button-group">
+            <div className="button-group scrolling-reveal-animation">
               <button 
                 className="btn btn-primary"
                 onClick={() => onNavigate('login')}
@@ -73,7 +100,7 @@ export default function LandingPage ({onNavigate}: LandingPageInterface) {
           
           <div className='feature-container'>
             <div className="features">
-              <div className="feature-card">
+              <div className="feature-card scrolling-reveal-animation-left">
                 <ShoppingBag size={48} strokeWidth={1.5} />
                 <h3>Browse Marketplace</h3>
                 <p>
@@ -82,7 +109,7 @@ export default function LandingPage ({onNavigate}: LandingPageInterface) {
                 </p>
               </div>
 
-              <div className="feature-card">
+              <div className="feature-card scrolling-reveal-animation-left">
                 <Upload size={48} strokeWidth={1.5} />
                 <h3>Sell Your Art</h3>
                 <p>
@@ -91,7 +118,7 @@ export default function LandingPage ({onNavigate}: LandingPageInterface) {
                 </p>
               </div>
 
-              <div className="feature-card">
+              <div className="feature-card scrolling-reveal-animation-right">
                 <TrendingUp size={48} strokeWidth={1.5} />
                 <h3>Track Sales</h3>
                 <p>
@@ -100,7 +127,7 @@ export default function LandingPage ({onNavigate}: LandingPageInterface) {
                 </p>
               </div>
 
-               <div className="feature-card">
+               <div className="feature-card scrolling-reveal-animation-right">
                 <StarIcon size={48} strokeWidth={1.5} />
                 <h3>Discover New Design</h3>
                 <p>
@@ -119,7 +146,7 @@ export default function LandingPage ({onNavigate}: LandingPageInterface) {
             <h1 className='design-title hero-title'>AVAILABLE DESIGNS</h1>
           </div>
 
-          <div className="gallery-carousel">
+          <div className="gallery-carousel scrolling-reveal-animation-right">
             <div className="gallery-carousel-track track-left">
               {/** Duplicate items for seamless scrolling */}
               {[
@@ -140,7 +167,7 @@ export default function LandingPage ({onNavigate}: LandingPageInterface) {
             </div>
           </div>
 
-          <div className="gallery-carousel">
+          <div className="gallery-carousel scrolling-reveal-animation-left">
             <div className="gallery-carousel-track track-right">
               {/** Duplicate items for seamless scrolling */}
               {[
@@ -161,7 +188,7 @@ export default function LandingPage ({onNavigate}: LandingPageInterface) {
             </div>
           </div>
 
-          <div className="gallery-carousel">
+          <div className="gallery-carousel scrolling-reveal-animation-right">
             <div className="gallery-carousel-track track-left">
               {/** Duplicate items for seamless scrolling */}
               {[
@@ -182,7 +209,7 @@ export default function LandingPage ({onNavigate}: LandingPageInterface) {
             </div>
           </div>
 
-          <div className="gallery-carousel">
+          <div className="gallery-carousel scrolling-reveal-animation-left">
             <div className="gallery-carousel-track track-right">
               {/** Duplicate items for seamless scrolling */}
               {[
@@ -210,7 +237,7 @@ export default function LandingPage ({onNavigate}: LandingPageInterface) {
         <section className="contact-section" id="contact">
           <div className='contact-wrapper'>
 
-            <div className='contact-Image'>
+            <div className='contact-Image scrolling-reveal-animation-left'>
               <img src="/assets/contactImg.png" alt="Calling Boy" />
             </div>
 
@@ -221,7 +248,7 @@ export default function LandingPage ({onNavigate}: LandingPageInterface) {
                   <br />We’d love to hear from you.
                 </p>
                 
-                <form className="contact-form">
+                <form className="contact-form scrolling-reveal-animation-right">
                   <div className="form-group">
 
                     <div className='input-divider'>
