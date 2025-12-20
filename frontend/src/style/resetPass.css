@@ -26,6 +26,11 @@
   margin-bottom: 1.5rem;
 }
 
+.reset-icon img {
+  width: 180px;
+  height: auto;
+}
+
 /* Titles */
 .reset-title {
   font-size: 1.875rem;

@@ -1,5 +1,4 @@
-import { Sparkles } from "lucide-react";
-import { useState } from "react";
+ import { useState } from "react";
 import type { ResetPassPageInteface } from "../../types/interfaces";
 import '../../style/resetPass.css';
 
@@ -14,7 +13,7 @@ export default function ResetPasswordPage ({ onNavigate }: ResetPassPageInteface
     <div className="reset-page">
       <div className="reset-card">
         <div className="reset-icon">
-          <Sparkles size={48} strokeWidth={1.5} />
+          <img src="/assets/forgetBoy.png" alt="" />
         </div>
 
         <h2 className="reset-title">Reset Password</h2>
