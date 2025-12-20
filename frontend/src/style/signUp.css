@@ -1,0 +1,140 @@
+/* Page layout */
+.signUp-page {
+  min-height: 100vh;
+  background: #f9fafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Card */
+.signUp-card {
+  background: #ffffff;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon */
+.signUp-icon {
+  display: flex;
+  justify-content: center;
+  margin-top: -40px;
+  margin-bottom: -40px;
+}
+
+.signUp-icon img {
+  width: 190px;
+  height: auto;
+}
+
+/* Titles */
+.signUp-title {
+  font-size: 45px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.signUp-subtitle {
+  font-size: 20px;
+  text-align: center;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+/* Account Selection */
+.account-selection {
+  text-align: center;
+  margin-top: -10px;
+}
+
+.account-selection button {
+  margin: 0 2px;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.account-selection button.active {
+  background-color: #000;
+  color: #fff;
+}
+/* Form */
+.form-group-sigin-up {
+  margin-bottom: 1.25rem;
+}
+
+.form-group-sigin-up label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.form-group-sigin-up .sign-up-input {
+  width: 100%;
+  max-width: 385px;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group-sigin-up input:focus {
+  border-color: #000;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+ 
+
+/* Buttons */
+.btn-primary {
+  background: #000;
+  color: #fff;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: #1f2937;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+.signUp-footer {
+  text-align: center;
+  color: #6b7280;
+}
+
+.signUp-footer button {
+  background: none;
+  border: none;
+  color: #0f9fe2;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.signUp-footer button:hover {
+  text-decoration: underline;
+}
