@@ -1,4 +1,4 @@
-import { Sparkles, ArrowBigLeft } from 'lucide-react';
+import { ArrowBigLeft } from 'lucide-react';
 import { useState } from 'react';
 import type { LoginPageInteface } from '../../types/interfaces';
 import '../../style/login.css';
@@ -26,7 +26,7 @@ export default function LoginPage ({onNavigate}: LoginPageInteface) {
         </div>
 
         <div className="login-icon">
-          <Sparkles size={48} strokeWidth={1.5} />
+          <img src="/assets/loginBoy.png" alt="logging in" />
         </div>
 
         <h2 className="login-title">Welcome Back</h2>
