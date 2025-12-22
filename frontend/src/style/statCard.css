@@ -1,0 +1,44 @@
+/* Stat Card */
+.stat-card {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  padding: 1.5rem;
+  transition: box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.stat-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4b5563;
+  margin-bottom: 0.75rem;
+}
+
+/* Value */
+.stat-value-wrapper {
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Trend */
+.stat-trend {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #047857; /* Emerald-600 */
+}
+
+/* Subtitle */
+.stat-subtitle {
+  font-size: 0.875rem;
+  color: #6b7280; /* Gray-500 */
+}

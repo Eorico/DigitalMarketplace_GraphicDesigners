@@ -3,7 +3,7 @@ import LandingPage from './page/landin-page/Landing.Page';
 import LoginPage from './authentication/login/Login.Page';
 import SignUpPage from './authentication/signup/Sign.Up.Page';
 import ResetPasswordPage from './authentication/reset-password/Reset.Password.Page';
-import type { Page } from './types/interfaces';
+import type { Page } from './types/interfaces/interfaces';
 import './App.css';
 
 
@@ -20,6 +20,8 @@ function App() {
        { currentPage === 'login' && <LoginPage onNavigate={NavigationControll} /> }
        { currentPage === 'signup' && <SignUpPage onNavigate={NavigationControll} /> }
        { currentPage === 'resetPass' && <ResetPasswordPage onNavigate={NavigationControll} /> }
+       { currentPage === 'customerPortal' && <ResetPasswordPage onNavigate={NavigationControll} /> }
+       { currentPage === 'sellerPortal' && <ResetPasswordPage onNavigate={NavigationControll} /> }
     </>
   )
 }

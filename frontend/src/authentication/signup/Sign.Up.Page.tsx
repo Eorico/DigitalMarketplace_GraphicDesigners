@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { SignUpPageInteface } from "../../types/interfaces";
+import type { SignUpPageInteface } from "../../types/interfaces/interfaces";
 import '../../style/signUp.css';
 
 export default function SignUpPage ({ onNavigate }: SignUpPageInteface) {

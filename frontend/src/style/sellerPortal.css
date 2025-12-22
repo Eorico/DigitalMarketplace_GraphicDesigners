@@ -1,0 +1,136 @@
+/* Dashboard Wrapper */
+.seller-dashboard {
+  flex: 1;
+  background-color: #f9fafb;
+}
+
+/* Header */
+.seller-portal-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.seller-portal-header-inner {
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Header Text */
+.seller-portal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.seller-portal-subtitle {
+  margin-top: 0.25rem;
+  color: #4b5563;
+}
+
+/* Upload Button */
+.seller-portal-upload-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #111827;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.seller-portal-upload-button:hover {
+  background-color: #1f2937;
+}
+
+/* Main Content */
+.seller-portal-content {
+  padding: 2rem;
+}
+
+/* Stats Grid */
+.seller-portal-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .seller-portal-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .seller-portal-stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Products Section */
+.seller-portal-products-section {
+  margin-bottom: 2.5rem;
+}
+
+.seller-portal-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+.seller-portal-product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Upload Card */
+.seller-portal-upload-card {
+  margin-top: 2.5rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.seller-portal-upload-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.seller-portal-upload-text {
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+/* Upload CTA Button */
+.seller-portal-upload-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #111827;
+  color: #ffffff;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.seller-portal-upload-cta:hover {
+  background-color: #1f2937;
+}

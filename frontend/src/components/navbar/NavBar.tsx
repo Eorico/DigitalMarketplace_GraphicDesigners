@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { Navbar } from "../../types/interfaces";
+import type { Navbar } from "../../types/interfaces/interfaces";
 import '../../style/navbar.css';
 
 export default function Navbar({onNavigate}: Navbar) {

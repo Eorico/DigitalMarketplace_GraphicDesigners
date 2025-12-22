@@ -1,3 +1,80 @@
-export default function SellerPortal () {
-    
+import { Upload } from 'lucide-react';
+import { StatCard } from '../../../components/ui/StatCard';
+import { ProductListItem } from '../../../components/ui/ProductListItem';
+import { SellerStats, SellerViewProducts} from '../../../types/datas/data';
+
+/--- sample navigation ---/
+import type { SellerPortal } from '../../../types/interfaces/interfaces';
+
+import './style.css';
+
+export default function SellerPortal ({ onNavigate }: SellerPortal) {
+    return (
+    <div className="seller-dashboard">
+      <header className="seller-portal-header">
+        <div className="seller-portal-header-inner">
+          <div>
+            <h1 className="seller-portal-title">Seller Dashboard</h1>
+            <p className="seller-portal-subtitle">
+              Manage your products and track sales
+            </p>
+          </div>
+
+          <button className="seller-portalupload-button">
+            <Upload size={20} />
+            Upload Product
+          </button>
+        </div>
+      </header>
+
+      <main className="seller-portal-content">
+        <div className="seller-portal-stats-grid">
+          <StatCard
+            title="Total Revenue"
+            value={`$${SellerStats.totalRevenue.toLocaleString()}`}
+            subtitle=""
+            trend={SellerStats.revenueChange}
+          />
+          <StatCard
+            title="Total Sales"
+            value={SellerStats.totalSales.toLocaleString()}
+            subtitle=""
+            trend={SellerStats.salesChange}
+          />
+          <StatCard
+            title="Active Products"
+            value={SellerStats.activeProducts.toString()}
+            subtitle={`${SellerStats.activeProducts} active, ${SellerStats.pausedProducts} paused`}
+          />
+          <StatCard
+            title="Avg. Rating"
+            value={SellerStats.avgRating.toFixed(1)}
+            subtitle={`Based on ${SellerStats.totalReviews} reviews`}
+          />
+        </div>
+
+        <div className="seller-portal-products-section">
+          <h2 className="seller-portal-section-title">Your Products</h2>
+
+          <div className="seller-portal-product-list">
+            {SellerViewProducts.map((product) => (
+              <ProductListItem key={product.id} product={product} />
+            ))}
+          </div>
+        </div>
+
+        <div className="seller-portal-upload-card">
+          <h3 className="seller-portal-upload-title">Upload New Product</h3>
+          <p className="seller-portal-upload-text">
+            Share your amazing sprite sheets and graphics with the community
+          </p>
+
+          <button className="seller-portal-upload-cta">
+            <Upload size={20} />
+            Start Upload
+          </button>
+        </div>
+      </main>
+    </div>
+  );
 }

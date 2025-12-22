@@ -1,5 +1,5 @@
 import { ShoppingBag, Upload, TrendingUp, StarIcon } from 'lucide-react';
-import type { LandingPageInterface } from '../../types/interfaces';
+import type { LandingPageInterface } from '../../types/interfaces/interfaces';
 import Navbar from '../../components/navbar/NavBar';
 import '../../style/landingPage.css'
 import { useEffect, useState } from 'react';

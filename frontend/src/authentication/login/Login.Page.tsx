@@ -1,6 +1,6 @@
 import { ArrowBigLeft } from 'lucide-react';
 import { useState } from 'react';
-import type { LoginPageInteface } from '../../types/interfaces';
+import type { LoginPageInteface } from '../../types/interfaces/interfaces';
 import '../../style/login.css';
 
 export default function LoginPage ({onNavigate}: LoginPageInteface) {

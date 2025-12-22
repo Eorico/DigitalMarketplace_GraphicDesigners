@@ -1,5 +1,5 @@
  import { useState } from "react";
-import type { ResetPassPageInteface } from "../../types/interfaces";
+import type { ResetPassPageInteface } from "../../types/interfaces/interfaces";
 import '../../style/resetPass.css';
 
 export default function ResetPasswordPage ({ onNavigate }: ResetPassPageInteface) {
