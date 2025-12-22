@@ -15,6 +15,11 @@
   border-bottom: 1px solid #e5e7eb;
 }
 
+.sidebar-brand-container {
+  margin-top: -20px;
+  margin-bottom: -20px;
+}
+
 .sidebar-brand {
   display: flex;
   align-items: center;
@@ -25,11 +30,18 @@
   width: 2rem;
   height: 2rem;
   border-radius: 0.5rem;
-  background: linear-gradient(to bottom right, #f472b6, #fb923c);
+  border: 1px solid black;
+  border-radius: 50px;
+  margin-top: -25px;
+}
+
+.sidebar-brand-icon img {
+  width: 50x;
+  height: 34px;
 }
 
 .sidebar-brand-title {
-  font-size: 1.25rem;
+  font-size: 25px;
   font-weight: 700;
   color: #111827;
 }
@@ -52,7 +64,7 @@
   gap: 0.75rem;
   padding: 0.75rem 1rem;
   margin-bottom: 0.25rem;
-  border-radius: 0.5rem;
+  border-radius: 50px;
   background: transparent;
   border: none;
   color: #374151;
@@ -65,7 +77,7 @@
 }
 
 .sidebar-nav-item.active {
-  background-color: #111827;
+  background-color: #a3052c;
   color: #ffffff;
 }
 

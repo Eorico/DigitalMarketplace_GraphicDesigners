@@ -23,20 +23,13 @@ export function CustomerPortal({ onNavigate }: CustomerPortalPage) {
           </div>
 
           <button className="customer-cart-button">
-            <ShoppingCart size={20} />
-            <span className="customer-cart-text">Cart (3)</span>
+            <ShoppingCart size={30} color='#ffffffff'/>
+            <span className="customer-cart-text">Cart {}</span>
           </button>
         </div>
       </header>
 
       <main className="customer-main-content">
-        <div className="customer-page-header">
-          <h1 className="customer-page-title">Browse Marketplace</h1>
-          <p className="customer-page-subtitle">
-            Discover amazing sprite sheets and 2D graphics from talented artists
-          </p>
-        </div>
-
         <div className="customer-product-grid">
           {MarketViewProducts.map((product) => (
             <ProductCard key={product.id} product={product} />

@@ -4,7 +4,7 @@ import {
   ShoppingCart,
   Package,
   User,
-  LogOut,
+  DoorOpen,
   Upload,
   TrendingUp,
   DollarSign,
@@ -51,13 +51,18 @@ export function Sidebar(
     <aside className="sidebar">
       <div className="sidebar-header">
         <div className="sidebar-brand">
-          <div className="sidebar-brand-icon" />
-          <div>
+
+          <div className="sidebar-brand-icon">
+            <img src="/assets/boyLogo.png" alt="boy logo" />
+          </div>
+
+          <div className='sidebar-brand-container'>
             <h1 className="sidebar-brand-title">GRAPIXIE</h1>
             <p className="sidebar-brand-subtitle">
               {type === 'customer' ? 'Customer Portal' : 'Seller Dashboard'}
             </p>
           </div>
+
         </div>
       </div>
 
@@ -87,7 +92,7 @@ export function Sidebar(
 
       <div className="sidebar-footer">
         <button className="sidebar-logout-button" onClick={() => onNavigate('login')}>
-          <LogOut size={20} />
+          <DoorOpen size={20} />
           <span>Logout</span>
         </button>
       </div>

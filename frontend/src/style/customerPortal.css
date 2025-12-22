@@ -1,7 +1,7 @@
 /* Layout */
 .customer-portal {
   flex: 1;
-  background-color: #f9fafb;
+  background-color: #f8f7f7;
 }
 
 /* Header */
@@ -24,10 +24,12 @@
 .customer-search-container {
   flex: 1;
   max-width: 640px;
+  height: 65px;
 }
 
 .customer-search-wrapper {
   position: relative;
+  margin-top: 10px;
 }
 
 .customer-search-icon {
@@ -42,7 +44,7 @@
   width: 100%;
   padding: 0.75rem 1rem 0.75rem 3rem;
   border: 1px solid #d1d5db;
-  border-radius: 0.customer-5rem;
+  border-radius: 50px;
   font-size: 1rem;
 }
 
@@ -60,7 +62,7 @@
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   color: #374151;
-  background: transparent;
+  background: #a3052c;
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -72,30 +74,15 @@
 }
 
 .customer-cart-text {
-  font-weight: 600;
+  font-weight: 400;
+  font-size: 18px;
+  color: #ffffff;
 }
 
 /* Main Content */
 .customer-main-content {
   padding: 2rem;
-}
-
-.customer-page-header {
-  margin-bottom: 2rem;
-}
-
-.customer-page-title {
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: #111827;
-  margin-top: -20px;
-  margin-bottom: 0.5rem;
-}
-
-.customer-page-subtitle {
-  font-size: 1.125rem;
-  color: #4b5563;
-}
+} 
 
 /* Product Grid */
 .customer-product-grid {
