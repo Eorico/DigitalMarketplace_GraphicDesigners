@@ -40,7 +40,7 @@
 
 .customer-search-input {
   width: 100%;
-  padding: 0.customer-75rem 1rem 0.customer-75rem 3rem;
+  padding: 0.75rem 1rem 0.75rem 3rem;
   border: 1px solid #d1d5db;
   border-radius: 0.customer-5rem;
   font-size: 1rem;
@@ -54,17 +54,17 @@
 
 /* Cart Button */
 .customer-cart-button {
-  margin-left: 1.customer-5rem;
+  margin-left: 1.5rem;
   display: flex;
   align-items: center;
-  gap: 0.customer-5rem;
-  padding: 0.customer-5rem 1rem;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
   color: #374151;
   background: transparent;
   border: none;
-  border-radius: 0.customer-5rem;
+  border-radius: 0.5rem;
   cursor: pointer;
-  transition: background-color 0.customer-2s ease;
+  transition: background-color 0.2s ease;
 }
 
 .customer-cart-button:hover {
@@ -88,6 +88,7 @@
   font-size: 2.25rem;
   font-weight: 700;
   color: #111827;
+  margin-top: -20px;
   margin-bottom: 0.5rem;
 }
 

@@ -24,8 +24,8 @@ function App() {
        { currentPage === 'login' && <LoginPage onNavigate={NavigationControll} /> }
        { currentPage === 'signup' && <SignUpPage onNavigate={NavigationControll} /> }
        { currentPage === 'resetPass' && <ResetPasswordPage onNavigate={NavigationControll} /> }
-       { currentPage === 'customerPortal' && <UserSelectorPath  type='customer'  /> }
-       { currentPage === 'sellerPortal' && <UserSelectorPath  type='seller' /> }
+       { currentPage === 'customerPortal' && <UserSelectorPath  type='customer' onNavigate={NavigationControll} /> }
+       { currentPage === 'sellerPortal' && <UserSelectorPath  type='seller' onNavigate={NavigationControll} /> }
     </>
   )
 }

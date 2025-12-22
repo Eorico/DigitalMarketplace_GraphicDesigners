@@ -1,0 +1,11 @@
+.selector {
+    min-height: 100vh;
+    background-color: #f9fafb;
+    display: flex;
+}
+
+.selector-content {
+    flex: 1;
+    overflow-y: auto;
+    height: 100vh;
+}

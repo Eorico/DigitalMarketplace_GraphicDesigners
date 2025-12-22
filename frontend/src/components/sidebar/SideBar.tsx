@@ -15,16 +15,17 @@ import type { SidebarProps } from '../../types/interfaces/interfaces';
 import '../../style/sidebar.css';
 
 /--- sample navigation ---/
-import type { LandingPageInterface } from '../../types/interfaces/interfaces';
+import type { SideBarLogout } from '../../types/interfaces/interfaces';
 
-export function Sidebar({
+export function Sidebar(
+{
   type,
   currentView,
   onViewChange,
   cartCount = 0,
   productCount = 0,
-}: SidebarProps)
-
+  onNavigate,
+}: SidebarProps & SideBarLogout)
 {
   const customerItems = [
     { id: 'browse', label: 'Browse', icon: Home },
@@ -52,7 +53,7 @@ export function Sidebar({
         <div className="sidebar-brand">
           <div className="sidebar-brand-icon" />
           <div>
-            <h1 className="sidebar-brand-title">SpriteMarket</h1>
+            <h1 className="sidebar-brand-title">GRAPIXIE</h1>
             <p className="sidebar-brand-subtitle">
               {type === 'customer' ? 'Customer Portal' : 'Seller Dashboard'}
             </p>
@@ -85,7 +86,7 @@ export function Sidebar({
       </nav>
 
       <div className="sidebar-footer">
-        <button className="sidebar-logout-button">
+        <button className="sidebar-logout-button" onClick={() => onNavigate('login')}>
           <LogOut size={20} />
           <span>Logout</span>
         </button>
