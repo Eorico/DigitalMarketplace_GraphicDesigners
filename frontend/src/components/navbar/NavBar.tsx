@@ -33,7 +33,7 @@ export default function Navbar({onNavigate}: Navbar) {
 
         <div className={`navbar-links ${isOpen ? "open" : ""}`}>
           <button onClick={() => scrollSection('#home')}>Home</button>
-          <button onClick={() => scrollSection('#gallery')}>Gallery</button>
+          <button onClick={() => scrollSection('#design')}>Designs</button>
           <button onClick={() => scrollSection('#contact')}>Contact</button>
         </div>
 

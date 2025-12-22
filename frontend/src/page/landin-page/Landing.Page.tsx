@@ -141,7 +141,7 @@ export default function LandingPage ({onNavigate}: LandingPageInterface) {
 
         </section>
 
-        <section className='gallery-container' id='gallery'>
+        <section className='gallery-container' id='design'>
           <div className='design hero'>
             <h1 className='design-title hero-title'>AVAILABLE DESIGNS</h1>
           </div>
