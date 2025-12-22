@@ -11,6 +11,12 @@ export default function LoginPage ({onNavigate}: LoginPageInteface) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (accountType === 'customer') {
+      onNavigate('customerPortal');
+    } else {
+      onNavigate('sellerPortal');
+    }
   };
 
   return (
@@ -65,7 +71,7 @@ export default function LoginPage ({onNavigate}: LoginPageInteface) {
           </div>
 
           <button type="submit" className="btn-primary full-width">
-            Sign In
+            Login In
           </button>
 
           <div className="secondary-actions">

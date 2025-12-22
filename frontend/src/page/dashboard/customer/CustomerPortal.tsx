@@ -3,7 +3,10 @@ import { ProductCard } from '../../../components/ui/ProductCard';
 import { MarketViewProducts } from '../../../types/datas/data';
 import '../../../style/customerPortal.css';
 
-export function CustomerPortal() {
+/--- sample navigation ---/
+import type { CustomerPortalPage } from '../../../types/interfaces/interfaces';
+
+export function CustomerPortal({ onNavigate }: CustomerPortalPage) {
   return (
     <div className="customer-portal">
       <header className="customer-header">

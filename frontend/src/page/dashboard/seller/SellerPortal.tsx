@@ -4,11 +4,11 @@ import { ProductListItem } from '../../../components/ui/ProductListItem';
 import { SellerStats, SellerViewProducts} from '../../../types/datas/data';
 
 /--- sample navigation ---/
-import type { SellerPortal } from '../../../types/interfaces/interfaces';
+import type { SellerPortalPage } from '../../../types/interfaces/interfaces';
 
-import './style.css';
+import '../../../style/sellerPortal.css';
 
-export default function SellerPortal ({ onNavigate }: SellerPortal) {
+export default function SellerPortal ({ onNavigate }: SellerPortalPage) {
     return (
     <div className="seller-dashboard">
       <header className="seller-portal-header">

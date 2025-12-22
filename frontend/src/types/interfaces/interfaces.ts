@@ -20,9 +20,11 @@ export interface ResetPassPageInteface extends LandingPageInterface {}
 
 // sample navigation for now for the customer portal and seller portal
 
-export interface CustomerPortal extends LandingPageInterface {}
+export interface CustomerPortalPage extends LandingPageInterface {}
 
-export interface SellerPortal extends LandingPageInterface {}
+export interface SellerPortalPage extends LandingPageInterface {}
+
+// sample navigation for now for the customer portal and seller portal
 
 export interface Navbar extends LandingPageInterface {}
 

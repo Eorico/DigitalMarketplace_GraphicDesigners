@@ -12,7 +12,10 @@ import {
   Box,
 } from 'lucide-react';
 import type { SidebarProps } from '../../types/interfaces/interfaces';
-import './style.css';
+import '../../style/sidebar.css';
+
+/--- sample navigation ---/
+import type { LandingPageInterface } from '../../types/interfaces/interfaces';
 
 export function Sidebar({
   type,
