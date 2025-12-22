@@ -11,6 +11,11 @@
   position: sticky;
   top: 0;
   z-index: 10;
+  height: 97px;
+}
+
+.seller-portal-container-header {
+  margin-top: -10px;
 }
 
 .seller-portal-header-inner {
@@ -121,7 +126,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background-color: #111827;
+  background-color: #a3052c;
   color: #ffffff;
   padding: 0.75rem 2rem;
   border-radius: 0.5rem;

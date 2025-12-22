@@ -13,17 +13,14 @@ export default function SellerPortal ({ onNavigate }: SellerPortalPage) {
     <div className="seller-dashboard">
       <header className="seller-portal-header">
         <div className="seller-portal-header-inner">
-          <div>
+
+          <div className='seller-portal-container-header'>
             <h1 className="seller-portal-title">Seller Dashboard</h1>
             <p className="seller-portal-subtitle">
               Manage your products and track sales
             </p>
           </div>
 
-          <button className="seller-portalupload-button">
-            <Upload size={20} />
-            Upload Product
-          </button>
         </div>
       </header>
 
@@ -31,13 +28,13 @@ export default function SellerPortal ({ onNavigate }: SellerPortalPage) {
         <div className="seller-portal-stats-grid">
           <StatCard
             title="Total Revenue"
-            value={`$${SellerStats.totalRevenue.toLocaleString()}`}
+            value={`₱ ${SellerStats.totalRevenue.toLocaleString()}`}
             subtitle=""
             trend={SellerStats.revenueChange}
           />
           <StatCard
             title="Total Sales"
-            value={SellerStats.totalSales.toLocaleString()}
+            value={`₱ ${SellerStats.totalSales.toLocaleString()}`}
             subtitle=""
             trend={SellerStats.salesChange}
           />
