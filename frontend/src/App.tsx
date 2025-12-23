@@ -4,29 +4,81 @@ import LoginPage from './authentication/login/Login.Page';
 import SignUpPage from './authentication/signup/Sign.Up.Page';
 import ResetPasswordPage from './authentication/reset-password/Reset.Password.Page';
 
-/--- sample navigation ---/
+import { ProtectedRoute } from './authentication/protectedRoute/protectedRouting';
 import UserSelectorPath from './page/dashboard/dir/userSelectorPath';
 
-import type { Page } from './types/interfaces/interfaces';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<Page>('landingPage'); 
-
-  const NavigationControll = (page: string) => {
-    setCurrentPage(page as Page);
-  };
+   // mock type of navigation for authentication
+   const [isAuth, setisAuth] = useState(false);
+   const [role, setRole] = useState<'customer' | 'seller' | null>(null);
 
   return (
-    <>
-       { currentPage === 'landingPage' && <LandingPage onNavigate={NavigationControll} /> }
-       { currentPage === 'login' && <LoginPage onNavigate={NavigationControll} /> }
-       { currentPage === 'signup' && <SignUpPage onNavigate={NavigationControll} /> }
-       { currentPage === 'resetPass' && <ResetPasswordPage onNavigate={NavigationControll} /> }
-       { currentPage === 'customerPortal' && <UserSelectorPath  type='customer' onNavigate={NavigationControll} /> }
-       { currentPage === 'sellerPortal' && <UserSelectorPath  type='seller' onNavigate={NavigationControll} /> }
-    </>
+    <BrowserRouter>
+        <Routes>
+
+          <Route 
+            path='/'
+            element={<LandingPage/>}
+          />
+
+          <Route 
+            path='/login'
+            element={
+              <LoginPage
+                onLogin={(userRole) => {
+                  setisAuth(true);
+                  setRole(userRole);
+                }}
+              />
+            }
+          />
+
+          <Route 
+            path='/signup'
+            element={
+              <SignUpPage
+                onSignIn={(userRole) => {
+                  setisAuth(true);
+                  setRole(userRole);
+                }}
+              />
+            }
+          />
+
+          <Route 
+            path='/reset-password'
+            element={<ResetPasswordPage/>}
+          />
+
+          <Route 
+            path='/customer/'
+            element={
+              <ProtectedRoute isAuthenticated={isAuth} role={role} allowed='customer'>
+                <UserSelectorPath type={'customer'} />
+              </ProtectedRoute>
+            }
+          />
+
+          <Route 
+            path='/seller/'
+            element={
+              <ProtectedRoute isAuthenticated={isAuth} role={role} allowed='seller'>
+                <UserSelectorPath type={'seller'}/>
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path='*'
+            element={<Navigate to={'/'}/>}
+          />
+
+        </Routes>
+    </BrowserRouter>
   )
 }
 

@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
-import type { Navbar } from "../../types/interfaces/interfaces";
 import '../../style/navbar.css';
 
-export default function Navbar({onNavigate}: Navbar) {
+import { useNavigate } from "react-router-dom";
+
+export default function Navbar() {
+  const navigate = useNavigate();
+
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -38,8 +41,8 @@ export default function Navbar({onNavigate}: Navbar) {
         </div>
 
         <div className="navbar-actions">
-          <button className="btn-outline" onClick={() => onNavigate('login')}>Login</button>
-          <button className="btn-primary" onClick={() => onNavigate('signup')}>Sign Up</button>
+          <button className="btn-outline" onClick={() => navigate('/login')}>Login</button>
+          <button className="btn-primary" onClick={() => navigate('/signup')}>Sign Up</button>
         </div>
 
         <button className="navbar-toggle" onClick={() => setIsOpen(!isOpen)}>

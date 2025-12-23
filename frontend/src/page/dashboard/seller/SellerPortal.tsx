@@ -3,12 +3,13 @@ import { StatCard } from '../../../components/ui/StatCard';
 import { ProductListItem } from '../../../components/ui/ProductListItem';
 import { SellerStats, SellerViewProducts} from '../../../types/datas/data';
 
-/--- sample navigation ---/
-import type { SellerPortalPage } from '../../../types/interfaces/interfaces';
-
 import '../../../style/sellerPortal.css';
 
-export default function SellerPortal ({ onNavigate }: SellerPortalPage) {
+interface Props {
+  view: string;
+}
+
+export default function SellerPortal ({ view }: Props) {
     return (
     <div className="seller-dashboard">
       <header className="seller-portal-header">

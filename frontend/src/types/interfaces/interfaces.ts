@@ -1,4 +1,12 @@
-export type Page = 'landingPage' | 'login' | 'signup' | 'resetPass' | 'customerPortal' | 'sellerPortal'
+import type React from "react";
+
+export interface ProtectedRoutes {
+    isAuthenticated: boolean;
+    role: 'customer' | 'seller' | null;
+    allowed: 'customer' | 'seller';
+    children: React.ReactNode
+}
+
 
 export interface SidebarProps {
   type: 'customer' | 'seller';
@@ -8,26 +16,6 @@ export interface SidebarProps {
   productCount?: number;
   
 }
-
-export interface LandingPageInterface {
-    onNavigate: (page: string) => void;
-}
-
-export interface LoginPageInteface extends LandingPageInterface {}
-
-export interface SignUpPageInteface extends LandingPageInterface {}
-
-export interface ResetPassPageInteface extends LandingPageInterface {}
-
-// sample navigation for now for the customer portal and seller portal
-
-export interface CustomerPortalPage extends LandingPageInterface {}
-export interface SellerPortalPage extends LandingPageInterface {}
-export interface SideBarLogout extends LandingPageInterface {}
-
-// sample navigation for now for the customer portal and seller portal
-
-export interface Navbar extends LandingPageInterface {}
 
 export interface Products {
     id: string;

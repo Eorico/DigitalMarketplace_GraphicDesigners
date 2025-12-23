@@ -8,14 +8,14 @@ import {
   Upload,
   TrendingUp,
   DollarSign,
-  Settings,
   Box,
+  Settings2
 } from 'lucide-react';
 import type { SidebarProps } from '../../types/interfaces/interfaces';
 import '../../style/sidebar.css';
 
-/--- sample navigation ---/
-import type { SideBarLogout } from '../../types/interfaces/interfaces';
+import { useNavigate } from 'react-router-dom';
+
 
 export function Sidebar(
 {
@@ -24,8 +24,7 @@ export function Sidebar(
   onViewChange,
   cartCount = 0,
   productCount = 0,
-  onNavigate,
-}: SidebarProps & SideBarLogout)
+}: SidebarProps)
 {
   const customerItems = [
     { id: 'browse', label: 'Browse', icon: Home },
@@ -33,6 +32,7 @@ export function Sidebar(
     { id: 'cart', label: 'Cart', icon: ShoppingCart, badge: cartCount },
     { id: 'orders', label: 'My Orders', icon: Package },
     { id: 'profile', label: 'Profile', icon: User },
+    { id: 'settings', label: 'Settings', icon: Settings2 },
   ];
 
   const sellerItems = [
@@ -42,10 +42,12 @@ export function Sidebar(
     { id: 'analytics', label: 'Analytics', icon: TrendingUp },
     { id: 'earnings', label: 'Earnings', icon: DollarSign },
     { id: 'profile', label: 'Profile', icon: User },
-    { id: 'settings', label: 'Settings', icon: Settings },
+    { id: 'settings', label: 'Settings', icon: Settings2 },
   ];
 
   const items = type === 'customer' ? customerItems : sellerItems;
+
+  const navigate = useNavigate();
 
   return (
     <aside className="sidebar">
@@ -91,7 +93,7 @@ export function Sidebar(
       </nav>
 
       <div className="sidebar-footer">
-        <button className="sidebar-logout-button" onClick={() => onNavigate('login')}>
+        <button className="sidebar-logout-button" onClick={() => navigate('/login')}>
           <DoorOpen size={20} />
           <span>Logout</span>
         </button>

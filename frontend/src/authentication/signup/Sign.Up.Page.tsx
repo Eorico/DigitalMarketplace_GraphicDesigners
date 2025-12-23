@@ -1,8 +1,12 @@
 import { useState } from "react";
-import type { SignUpPageInteface } from "../../types/interfaces/interfaces";
 import '../../style/signUp.css';
+import { useNavigate } from "react-router-dom";
 
-export default function SignUpPage ({ onNavigate }: SignUpPageInteface) {
+interface SignUpProps {
+  onSignIn: (role: 'customer' | 'seller') => void;
+}
+
+export default function SignUpPage ({ onSignIn }: SignUpProps) {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -10,8 +14,18 @@ export default function SignUpPage ({ onNavigate }: SignUpPageInteface) {
   const [accountType, setAccountType] =
     useState<'customer' | 'seller'>('customer');
 
+  const navigate = useNavigate();
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!email) {
+      return;
+    } else if (password !== confirmPassword) {
+      return;
+    }
+
+    navigate(accountType === 'customer' ? '/customer/' : '/seller/')
   };
 
   return (
@@ -96,7 +110,7 @@ export default function SignUpPage ({ onNavigate }: SignUpPageInteface) {
             Already have an account?{' '}
             <button
               type="button"
-              onClick={() => onNavigate('login')}
+              onClick={() => navigate('/login')}
             >
               Sign in
             </button>

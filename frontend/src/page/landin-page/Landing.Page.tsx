@@ -1,8 +1,9 @@
 import { ShoppingBag, Upload, TrendingUp, StarIcon } from 'lucide-react';
-import type { LandingPageInterface } from '../../types/interfaces/interfaces';
 import Navbar from '../../components/navbar/NavBar';
 import '../../style/landingPage.css'
 import { useEffect, useState } from 'react';
+
+import { useNavigate } from 'react-router-dom';
 
 const images = {
   First_Src: [
@@ -31,7 +32,9 @@ const images = {
   ],
 };
 
-export default function LandingPage ({onNavigate}: LandingPageInterface) {
+export default function LandingPage () {
+  const navigate = useNavigate();
+
   const [openmodal, setOpenModal] = useState<null | 'terms' | 'privacy' | 'contact'>(null)
 
   const $qrselector = <T extends Element>(selector: string): NodeListOf<T> => {
@@ -64,7 +67,7 @@ export default function LandingPage ({onNavigate}: LandingPageInterface) {
 
       <div className="landing">
 
-        <Navbar onNavigate={onNavigate}/>
+        <Navbar />
 
         <section className="landing-container" id='home'>
           {/* Hero Section */}
@@ -85,13 +88,13 @@ export default function LandingPage ({onNavigate}: LandingPageInterface) {
             <div className="button-group scrolling-reveal-animation">
               <button 
                 className="btn btn-primary"
-                onClick={() => onNavigate('login')}
+                onClick={() => navigate('/login')}
               >
                 Get Started
               </button>
               <button
                 className="btn btn-outline"
-                onClick={() => onNavigate('signup')}
+                onClick={() => navigate('/signup')}
               >
                 Join For Free
               </button>

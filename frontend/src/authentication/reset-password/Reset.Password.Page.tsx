@@ -1,8 +1,10 @@
  import { useState } from "react";
-import type { ResetPassPageInteface } from "../../types/interfaces/interfaces";
 import '../../style/resetPass.css';
 
-export default function ResetPasswordPage ({ onNavigate }: ResetPassPageInteface) {
+import { useNavigate } from "react-router-dom";
+
+export default function ResetPasswordPage () {
+  const navigate = useNavigate();
     const [email, setEmail] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -39,7 +41,7 @@ export default function ResetPasswordPage ({ onNavigate }: ResetPassPageInteface
           <div className="reset-footer">
             <button
               type="button"
-              onClick={() => onNavigate('login')}
+              onClick={() => navigate('/login')}
             >
               Back to login
             </button>

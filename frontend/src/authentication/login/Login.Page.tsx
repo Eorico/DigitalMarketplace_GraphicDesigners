@@ -1,22 +1,28 @@
 import { ArrowBigLeft } from 'lucide-react';
 import { useState } from 'react';
-import type { LoginPageInteface } from '../../types/interfaces/interfaces';
+import { useNavigate } from 'react-router-dom';
 import '../../style/login.css';
 
-export default function LoginPage ({onNavigate}: LoginPageInteface) {
+interface LoginProps {
+  onLogin: (role: 'customer' | 'seller') => void;
+}
+
+export default function LoginPage ({ onLogin }: LoginProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [accountType, setAccountType] =
     useState<'customer' | 'seller'>('customer');
 
+  const navigate = useNavigate();
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (accountType === 'customer') {
-      onNavigate('customerPortal');
-    } else {
-      onNavigate('sellerPortal');
-    }
+    if (!email || !password) return;
+
+    onLogin(accountType);
+
+    navigate(accountType === 'customer' ? '/customer/' : '/seller/');
   };
 
   return (
@@ -24,7 +30,7 @@ export default function LoginPage ({onNavigate}: LoginPageInteface) {
       <div className="login-card">
         <div className='back-to-landing'>
           <button
-            onClick={() => onNavigate('landingPage')}
+            onClick={() => navigate('/')}
           >
             <ArrowBigLeft size={25}/>
             <span className='back-text'>Back</span>
@@ -64,7 +70,7 @@ export default function LoginPage ({onNavigate}: LoginPageInteface) {
           <div className="forgot-password">
             <button
               type="button"
-              onClick={() => onNavigate('resetPass')}
+              onClick={() => navigate('/reset-password')}
             >
               Forgot password?
             </button>
@@ -95,7 +101,7 @@ export default function LoginPage ({onNavigate}: LoginPageInteface) {
             Don&apos;t have an account?{' '}
             <button
               type="button"
-              onClick={() => onNavigate('signup')}
+              onClick={() => navigate('/signup')}
             >
               Sign up
             </button>
