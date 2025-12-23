@@ -12,7 +12,7 @@ export default function CustomerRoutes () {
         <Routes>
 
             <Route element={<CustomerPortal/>}>
-                <Route index element={<Navigate to={'browse'} replace/>} />
+                <Route index element={<Navigate to={'browse/'} replace/>} />
                 <Route path="/browse/" element={<BrowseProduct />} />
                 <Route path="/favorites/" element={<FavoritesDesign />} />
                 <Route path="/view-carts/" element={<AddtoCart />} />

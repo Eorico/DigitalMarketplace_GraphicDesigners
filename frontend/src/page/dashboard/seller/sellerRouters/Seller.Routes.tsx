@@ -12,7 +12,7 @@ export default function SellerRoutes () {
         <Routes>
             
             <Route element={<SellerPortal/>}>
-                <Route index element={<Navigate to={'overview'} replace/>}/>
+                <Route index element={<Navigate to={'overview/'} replace/>}/>
                 <Route path="/overview/" element={<OverViewSeller/>} />
                 <Route path="/sellers-products/" element={<SellerProducts/>}/>
                 <Route path="/upload-products/" element={<UploadProduct/>}/>
