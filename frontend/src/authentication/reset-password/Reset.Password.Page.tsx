@@ -34,7 +34,7 @@ export default function ResetPasswordPage () {
             />
           </div>
 
-          <button type="submit" className="btn-primary full-width">
+          <button type="submit" className="reset-btn-primary full-width">
             Send Reset Link
           </button>
 

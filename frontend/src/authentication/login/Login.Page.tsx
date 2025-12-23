@@ -76,21 +76,21 @@ export default function LoginPage ({ onLogin }: LoginProps) {
             </button>
           </div>
 
-          <button type="submit" className="btn-primary full-width">
+          <button type="submit" className="login-btn-primary full-width">
             Login In
           </button>
 
           <div className="secondary-actions">
             <button 
               type="button" 
-              className={`btn-outline ${accountType === 'customer' ? 'active' : ''}`}
+              className={`login-btn-outline ${accountType === 'customer' ? 'active' : ''}`}
               onClick={() => setAccountType('customer')}  
             >
               Browse as Customer
             </button>
             <button 
               type="button" 
-              className={`btn-outline ${accountType === 'seller' ? 'active' : ''}`}
+              className={`login-btn-outline ${accountType === 'seller' ? 'active' : ''}`}
               onClick={() => setAccountType('seller')}   
             >
               Seller Dashboard

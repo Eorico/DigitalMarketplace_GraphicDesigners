@@ -15,7 +15,7 @@
   padding: 2rem;
   width: 100%;
   max-width: 420px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #a3052c;
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -75,8 +75,8 @@
 }
 
 /* Buttons */
-.btn-primary {
-  background: #000;
+.reset-btn-primary {
+  background: #a3052c;
   color: #fff;
   padding: 0.75rem;
   border-radius: 0.5rem;
@@ -86,8 +86,8 @@
   transition: background 0.2s ease;
 }
 
-.btn-primary:hover {
-  background: #1f2937;
+.reset-btn-primary:hover {
+  background: #6d021d;
 }
 
 .full-width {

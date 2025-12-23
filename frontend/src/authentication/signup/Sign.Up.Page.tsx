@@ -102,7 +102,7 @@ export default function SignUpPage ({ onSignIn }: SignUpProps) {
             />
           </div>
 
-          <button type="submit" className="btn-primary full-width">
+          <button type="submit" className="sign-up-btn-primary full-width">
             Create Account
           </button>
 
