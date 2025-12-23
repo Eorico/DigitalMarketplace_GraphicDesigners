@@ -14,40 +14,40 @@ import {
 import type { SidebarProps } from '../../types/interfaces/interfaces';
 import '../../style/sidebar.css';
 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 
 export function Sidebar(
 {
   type,
-  currentView,
-  onViewChange,
   cartCount = 0,
   productCount = 0,
 }: SidebarProps)
 {
   const customerItems = [
-    { id: 'browse', label: 'Browse', icon: Home },
-    { id: 'favorites', label: 'Favorites', icon: Heart },
-    { id: 'cart', label: 'Cart', icon: ShoppingCart, badge: cartCount },
-    { id: 'orders', label: 'My Orders', icon: Package },
-    { id: 'profile', label: 'Profile', icon: User },
-    { id: 'settings', label: 'Settings', icon: Settings2 },
+    { path: '/browse/', label: 'Browse', icon: Home },
+    { path: '/favorites/', label: 'Favorites', icon: Heart },
+    { path: '/view-carts/', label: 'Cart', icon: ShoppingCart, badge: cartCount },
+    { path: '/orders/', label: 'My Orders', icon: Package },
+    { path: '/profile-customer/', label: 'Profile', icon: User },
+    { path: '/settings-customer/', label: 'Settings', icon: Settings2 },
   ];
 
   const sellerItems = [
-    { id: 'overview', label: 'Overview', icon: Home },
-    { id: 'products', label: 'My Products', icon: Box, badge: productCount },
-    { id: 'upload', label: 'Upload New', icon: Upload },
-    { id: 'analytics', label: 'Analytics', icon: TrendingUp },
-    { id: 'earnings', label: 'Earnings', icon: DollarSign },
-    { id: 'profile', label: 'Profile', icon: User },
-    { id: 'settings', label: 'Settings', icon: Settings2 },
+    { path: 'overview', label: 'Overview', icon: Home },
+    { path: 'products', label: 'My Products', icon: Box, badge: productCount },
+    { path: 'upload', label: 'Upload New', icon: Upload },
+    { path: 'analytics', label: 'Analytics', icon: TrendingUp },
+    { path: 'earnings', label: 'Earnings', icon: DollarSign },
+    { path: 'profile', label: 'Profile', icon: User },
+    { path: 'settings', label: 'Settings', icon: Settings2 },
   ];
 
   const items = type === 'customer' ? customerItems : sellerItems;
 
   const navigate = useNavigate();
+
+  const location = useLocation();
 
   return (
     <aside className="sidebar">
@@ -71,12 +71,12 @@ export function Sidebar(
       <nav className="sidebar-nav">
         {items.map((item) => {
           const Icon = item.icon;
-          const isActive = currentView === item.id;
+          const isActive = location.pathname.endsWith(item.path);
 
           return (
             <button
-              key={item.id}
-              onClick={() => onViewChange(item.id)}
+              key={item.path}
+              onClick={() => navigate(`/${type}/${item.path}`)}
               className={`sidebar-nav-item ${isActive ? 'active' : ''}`}
             >
               <Icon size={20} />

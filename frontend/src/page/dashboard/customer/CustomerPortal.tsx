@@ -1,13 +1,8 @@
 import { Search, ShoppingCart } from 'lucide-react';
-import { ProductCard } from '../../../components/ui/ProductCard';
-import { MarketViewProducts } from '../../../types/datas/data';
+import { Outlet } from 'react-router-dom';
 import '../../../style/customerPortal.css';
 
-interface Props {
-  view: string;
-}
-
-export function CustomerPortal({ view }: Props) {
+export function CustomerPortal() {
   return (
     <div className="customer-portal">
       <header className="customer-header">
@@ -31,11 +26,7 @@ export function CustomerPortal({ view }: Props) {
       </header>
 
       <main className="customer-main-content">
-        <div className="customer-product-grid">
-          {MarketViewProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        </div>
+        <Outlet />
       </main>
     </div>
   );

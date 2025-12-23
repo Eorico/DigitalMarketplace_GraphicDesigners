@@ -14,11 +14,11 @@ export function ProductListItem({ product }: ProducListProps) {
           <h3 className="item-title">{product.title}</h3>
 
           <div className="item-meta">
-            <span className="item-price">${product.price}</span>
+            <span className="item-price">₱{product.price}</span>
             <span className="dot">•</span>
             <span>{product.sales} sales</span>
             <span className="dot">•</span>
-            <span>${product.revenue.toLocaleString()} revenue</span>
+            <span>₱{product.revenue.toLocaleString()} revenue</span>
           </div>
         </div>
 

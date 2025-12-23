@@ -5,11 +5,8 @@ import { SellerStats, SellerViewProducts} from '../../../types/datas/data';
 
 import '../../../style/sellerPortal.css';
 
-interface Props {
-  view: string;
-}
-
-export default function SellerPortal ({ view }: Props) {
+ 
+export default function SellerPortal () {
     return (
     <div className="seller-dashboard">
       <header className="seller-portal-header">

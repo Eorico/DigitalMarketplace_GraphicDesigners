@@ -55,7 +55,7 @@ function App() {
           />
 
           <Route 
-            path='/customer/'
+            path='/customer/*'
             element={
               <ProtectedRoute isAuthenticated={isAuth} role={role} allowed='customer'>
                 <UserSelectorPath type={'customer'} />
@@ -64,7 +64,7 @@ function App() {
           />
 
           <Route 
-            path='/seller/'
+            path='/seller/*'
             element={
               <ProtectedRoute isAuthenticated={isAuth} role={role} allowed='seller'>
                 <UserSelectorPath type={'seller'}/>

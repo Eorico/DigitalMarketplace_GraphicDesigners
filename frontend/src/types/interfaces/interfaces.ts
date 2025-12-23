@@ -10,8 +10,6 @@ export interface ProtectedRoutes {
 
 export interface SidebarProps {
   type: 'customer' | 'seller';
-  currentView: string;
-  onViewChange: (view: string) => void;
   cartCount?: number;
   productCount?: number;
   

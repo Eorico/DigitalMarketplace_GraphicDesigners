@@ -61,12 +61,12 @@ export const SellerViewProducts: SellerProducts[] = [
     {
         id: 'Sample',
         title: 'Sample',
-        price: 29.99,
-        sales: 234,
-        revenue: 7006.66,
+        price: 0,
+        sales: 0,
+        revenue: 0,
         status: 'active',
         icon: 'Sample',
-        rating: 123,
+        rating: 0,
         image: 'Sample'
     }
 ]
