@@ -41,8 +41,8 @@ export default function Navbar() {
         </div>
 
         <div className="navbar-actions">
-          <button className="btn-outline" onClick={() => navigate('/login')}>Login</button>
-          <button className="btn-primary" onClick={() => navigate('/signup')}>Sign Up</button>
+          <button className="nav-btn nav-btn-outline" onClick={() => navigate('/login')}>Login</button>
+          <button className="nav-btn nav-btn-primary" onClick={() => navigate('/signup')}>Sign Up</button>
         </div>
 
         <button className="navbar-toggle" onClick={() => setIsOpen(!isOpen)}>

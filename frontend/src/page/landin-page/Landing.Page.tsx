@@ -87,13 +87,13 @@ export default function LandingPage () {
 
             <div className="button-group scrolling-reveal-animation">
               <button 
-                className="btn btn-primary"
+                className="landing-btn landing-btn-primary"
                 onClick={() => navigate('/login')}
               >
                 Get Started
               </button>
               <button
-                className="btn btn-outline"
+                className="landing-btn landing-btn-outline"
                 onClick={() => navigate('/signup')}
               >
                 Join For Free

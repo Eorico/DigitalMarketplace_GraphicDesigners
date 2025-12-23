@@ -79,6 +79,34 @@
   cursor: pointer;
 }
 
+.nav-btn {
+  padding: 0.75rem 0.7rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-btn-primary {
+  background: #a3052c;
+  color: #fff;
+  border: none;
+}
+
+.nav-btn-primary:hover {
+  background: #a3052c;
+}
+
+.nav-btn-outline {
+  background: #fff;
+  color: #000;
+  border: 1px solid #d1d5db;
+}
+
+.nav-btn-outline:hover {
+  background: #f9fafb;
+}
+
 /* Responsive */
 @media screen and (max-width: 768px) {
   .navbar-links {

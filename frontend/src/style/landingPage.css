@@ -60,7 +60,7 @@
   justify-content: center;
 }
 
-.btn {
+.landing-btn {
   padding: 0.75rem 2rem;
   border-radius: 0.5rem;
   font-weight: 500;
@@ -68,23 +68,23 @@
   transition: all 0.2s ease;
 }
 
-.btn-primary {
-  background: #000;
+.landing-btn-primary {
+  background: #a3052c;
   color: #fff;
   border: none;
 }
 
-.btn-primary:hover {
-  background: #1f2937;
+.landing-btn-primary:hover {
+  background: #a3052c;
 }
 
-.btn-outline {
+.landing-btn-outline {
   background: #fff;
   color: #000;
   border: 1px solid #d1d5db;
 }
 
-.btn-outline:hover {
+.landing-btn-outline:hover {
   background: #f9fafb;
 }
 
@@ -367,7 +367,7 @@
 }
 
 .btn-contact {
-  background: #2b2a2a;
+  background: #5c0319;
   color: #ffffff;
   border: none;
   padding: 1rem 2rem;
