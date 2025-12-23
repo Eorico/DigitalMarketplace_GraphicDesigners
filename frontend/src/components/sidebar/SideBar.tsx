@@ -7,7 +7,6 @@ import {
   DoorOpen,
   Upload,
   TrendingUp,
-  DollarSign,
   Box,
   Settings2
 } from 'lucide-react';
@@ -34,13 +33,12 @@ export function Sidebar(
   ];
 
   const sellerItems = [
-    { path: 'overview', label: 'Overview', icon: Home },
-    { path: 'products', label: 'My Products', icon: Box, badge: productCount },
-    { path: 'upload', label: 'Upload New', icon: Upload },
-    { path: 'analytics', label: 'Analytics', icon: TrendingUp },
-    { path: 'earnings', label: 'Earnings', icon: DollarSign },
-    { path: 'profile', label: 'Profile', icon: User },
-    { path: 'settings', label: 'Settings', icon: Settings2 },
+    { path: '/overview/', label: 'Overview', icon: Home },
+    { path: '/sellers-products/', label: 'My Products', icon: Box, badge: productCount },
+    { path: '/upload-products/', label: 'Upload New', icon: Upload },
+    { path: '/seller-analytics/', label: 'Analytics', icon: TrendingUp },
+    { path: '/profile-customer/', label: 'Profile', icon: User },
+    { path: '/settings-customer/', label: 'Settings', icon: Settings2 },
   ];
 
   const items = type === 'customer' ? customerItems : sellerItems;

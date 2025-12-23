@@ -1,11 +1,11 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { CustomerPortal } from "../CustomerPortal";
-import BrowseProduct from "../customerPages/BrowseProduct";
-import AddtoCart from "../customerPages/AddtoCarts";
+import BrowseProduct from "../customerPages/Browse.Product";
+import AddtoCart from "../customerPages/Add.To.Carts";
 import FavoritesDesign from "../customerPages/Favorites";
 import ViewOrders from "../customerPages/Orders";
-import ProfileCustomer from "../customerPages/ProfileCustomer";
-import SettingsForCustomer from "../customerPages/SettingsCustomer";
+import ProfileCustomer from "../customerPages/Profile.Customer";
+import SettingsForCustomer from "../customerPages/Settings.Customer";
 
 export default function CustomerRoutes () {
     return (

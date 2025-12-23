@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Sidebar } from "../../../components/sidebar/SideBar";
 import CustomerRoutes from "../customer/customerRouters/Customer.Routes";
-import SellerPortal from "../seller/SellerPortal";
+import SellerRoutes from "../seller/sellerRouters/Seller.Routes";
 import '../../../style/selectorPath.css'
 
 export default function UserSelectorPath({ type = 'customer'}: { type: 'customer' | 'seller' } ) {
@@ -18,7 +18,7 @@ export default function UserSelectorPath({ type = 'customer'}: { type: 'customer
             <div className="selector-content"> 
                 { portalType === 'customer' ?
                 <CustomerRoutes  /> : 
-                <SellerPortal />
+                <SellerRoutes />
                 } 
             </div>
         </div>
