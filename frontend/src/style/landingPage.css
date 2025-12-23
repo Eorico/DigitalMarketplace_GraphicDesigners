@@ -225,6 +225,9 @@
   padding: 6rem 1rem;
   background: #f1efef;
   color: #fff;
+  border: 1px solid #cfcdce;
+  border-top-left-radius: 90px;
+  border-top-right-radius: 90px;
 }
 
 .contact-wrapper {
