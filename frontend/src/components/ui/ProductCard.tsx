@@ -1,10 +1,12 @@
 import { Star, Heart, Eye } from 'lucide-react';
 import type { ProductCardProps } from '../../types/interfaces/interfaces';
-import { useState } from 'react';
 import '../.../../../style/productCard.css';
 
+import { useFavorites } from '../../page/dashboard/customer/customerPages/contextConnections/Fav.Context';
+
 export function ProductCard({ product }: ProductCardProps) {
-  const [isSaved, setIsSaved] = useState(false);
+  const { favorites, toggleFavorite } = useFavorites();
+  const isSaved = favorites.some((p)=>p.id === product.id);
 
   return (
     <div className="product-card">
@@ -50,7 +52,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
         <div className="action-row">
           <button
-            onClick={() => setIsSaved(!isSaved)}
+            onClick={() => toggleFavorite(product)}
             className={`save-btn ${isSaved ? 'saved' : ''}`}
           >
             <Heart size={18} className={`heart-icon ${isSaved ? 'filled' : ''}`} />

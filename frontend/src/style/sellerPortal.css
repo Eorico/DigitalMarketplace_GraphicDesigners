@@ -2,6 +2,7 @@
 .seller-dashboard {
   flex: 1;
   background-color: #f9fafb;
+  min-height: 100vh;
 }
 
 /* Header */

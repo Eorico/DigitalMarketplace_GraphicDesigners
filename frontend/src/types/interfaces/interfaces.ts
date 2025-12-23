@@ -29,6 +29,11 @@ export interface ProductCardProps {
     product: Products;
 }
 
+export interface FavoritesProductsProps {
+    favorites: Products[];
+    toggleFavorite: (product: Products) => void;
+}
+
 export interface SellerProducts extends Products {
     status: 'active' | 'paused';
     revenue: number;

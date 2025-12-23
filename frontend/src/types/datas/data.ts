@@ -2,7 +2,7 @@ import type { Products, SellerProducts, Statistics } from "../interfaces/interfa
 
 export const MarketViewProducts: Products[] = [
     {
-        id: 'Sample',
+        id: '1',
         title: 'Sample Title',
         rating: 1.00,
         sales: 1234,
@@ -11,7 +11,7 @@ export const MarketViewProducts: Products[] = [
         icon: 'sample',
     },
     {
-        id: 'Sample',
+        id: '2',
         title: 'Sample Title',
         rating: 1.00,
         sales: 1234,
@@ -20,7 +20,7 @@ export const MarketViewProducts: Products[] = [
         icon: 'sample',
     },
     {
-        id: 'Sample',
+        id: '3',
         title: 'Sample Title',
         rating: 1.00,
         sales: 1234,
@@ -29,7 +29,7 @@ export const MarketViewProducts: Products[] = [
         icon: 'sample',
     },
     {
-        id: 'Sample',
+        id: '4',
         title: 'Sample Title',
         rating: 1.00,
         sales: 1234,
@@ -38,7 +38,7 @@ export const MarketViewProducts: Products[] = [
         icon: 'sample',
     },
     {
-        id: 'Sample',
+        id: '5',
         title: 'Sample Title',
         rating: 1.00,
         sales: 1234,
@@ -47,7 +47,7 @@ export const MarketViewProducts: Products[] = [
         icon: 'sample',
     },
     {
-        id: 'Sample',
+        id: '6',
         title: 'Sample Title',
         rating: 1.00,
         sales: 1234,
@@ -59,7 +59,7 @@ export const MarketViewProducts: Products[] = [
 
 export const SellerViewProducts: SellerProducts[] = [
     {
-        id: 'Sample',
+        id: '1',
         title: 'Sample',
         price: 0,
         sales: 0,

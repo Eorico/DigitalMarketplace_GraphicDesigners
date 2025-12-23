@@ -2,6 +2,7 @@
 .customer-portal {
   flex: 1;
   background-color: #f8f7f7;
+  min-height: 100vh;
 }
 
 /* Header */
