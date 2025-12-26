@@ -34,6 +34,12 @@ export interface FavoritesProductsProps {
     toggleFavorite: (product: Products) => void;
 }
 
+export interface AddToCartContext {
+    cartProducts: Products[];
+    addToCart: (product: Products) => void;
+    removeFromCart: (item: string) => void;
+}
+
 export interface SellerProducts extends Products {
     status: 'active' | 'paused';
     revenue: number;

@@ -3,9 +3,12 @@ import type { ProductCardProps } from '../../types/interfaces/interfaces';
 import '../.../../../style/productCard.css';
 
 import { useFavorites } from '../../page/dashboard/customer/customerPages/contextConnections/Fav.Context';
+import { useCart } from '../../page/dashboard/customer/customerPages/contextConnections/Add.To.Cart.Context';
 
 export function ProductCard({ product }: ProductCardProps) {
   const { favorites, toggleFavorite } = useFavorites();
+  const { addToCart } = useCart();
+
   const isSaved = favorites.some((p)=>p.id === product.id);
 
   return (
@@ -47,7 +50,12 @@ export function ProductCard({ product }: ProductCardProps) {
 
         <div className="price-row">
           <span className="product-price">${product.price}</span>
-          <button className="add-to-cart-btn">Add to Cart</button>
+          <button 
+            className="add-to-cart-btn"
+            onClick={() => addToCart(product)}
+          >
+            Add to Cart
+          </button>
         </div>
 
         <div className="action-row">

@@ -8,9 +8,16 @@ export default function FavoritesDesign () {
 
         <div className="favorites-product customer-product-grid">
             {
-                favorites.map((product) => (
-                    <ProductCard key={product.id} product={product} />
-                ))
+                favorites.length === 0 ? (
+                    <div className="no-favorites">
+                        <h2>No Favorites Yet</h2>
+                        <p>save designs you like and they will appear here</p>
+                    </div>
+                ) : (
+                    favorites.map((product) => (
+                        <ProductCard key={product.id} product={product} />
+                    ))
+                )
             }
         </div>
 

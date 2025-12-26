@@ -5,26 +5,29 @@ import SellerRoutes from "../seller/sellerRouters/Seller.Routes";
 import '../../../style/selectorPath.css'
 
 import { FavoritesProviderContext } from "../customer/customerPages/contextConnections/Fav.Context";
+import { CartProviderContext } from "../customer/customerPages/contextConnections/Add.To.Cart.Context";
 
 export default function UserSelectorPath({ type = 'customer'}: { type: 'customer' | 'seller' } ) {
     const [ portalType ] = useState<'customer' | 'seller'>(type);
 
     return (
-        <FavoritesProviderContext>
-            <div className="selector">
-                <Sidebar 
-                    type={portalType}
-                    cartCount={3}
-                    productCount={4}
-                    
-                />
-                <div className="selector-content"> 
-                    { portalType === 'customer' ?
-                    <CustomerRoutes  /> : 
-                    <SellerRoutes />
-                    } 
+        <CartProviderContext>
+            <FavoritesProviderContext>
+                <div className="selector">
+                    <Sidebar 
+                        type={portalType}
+                        cartCount={0}
+                        productCount={0}
+                        
+                    />
+                    <div className="selector-content"> 
+                        { portalType === 'customer' ?
+                        <CustomerRoutes  /> : 
+                        <SellerRoutes />
+                        } 
+                    </div>
                 </div>
-            </div>
-        </FavoritesProviderContext>
+            </FavoritesProviderContext>
+        </CartProviderContext>
     );
 }
