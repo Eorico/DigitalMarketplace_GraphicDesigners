@@ -38,6 +38,7 @@ export interface AddToCartContext {
     cartProducts: Products[];
     addToCart: (product: Products) => void;
     removeFromCart: (item: string) => void;
+    clearCart: () => void;
 }
 
 export interface SellerProducts extends Products {
