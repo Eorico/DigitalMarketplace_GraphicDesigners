@@ -227,7 +227,7 @@
 }
 
 .buy-again-btn {
-  background: #6366f1;
+  background: #a3052c;
   color: white;
   border: none;
   padding: 0.6rem 1.2rem;
@@ -238,7 +238,7 @@
 }
 
 .buy-again-btn:hover {
-  background: #4f46e5;
+  background: #a3052c;
   transform: scale(1.05);
 }
 
