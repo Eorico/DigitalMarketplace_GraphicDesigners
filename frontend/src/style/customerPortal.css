@@ -143,6 +143,105 @@
   color: #ef4444;
 }
 
+/* modal for checkout */
+
+.checkout-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.checkout {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 90%;
+}
+
+.payment-options label{
+  display: block;
+  margin: 0.5rem 0;
+}
+
+.checkout-modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+/* order page */
+
+.orders-page {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.order-header {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  background: #e3e3e6;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid #b6afaf;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.order-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.order-item img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.order-info {
+  flex: 1;
+}
+
+.order-info h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.order-info span {
+  font-weight: 600;
+  color: #333;
+}
+
+.buy-again-btn {
+  background: #6366f1;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.buy-again-btn:hover {
+  background: #4f46e5;
+  transform: scale(1.05);
+}
+
 /* Responsive Grid */
 @media (min-width: 768px) {
   .customer-product-grid {

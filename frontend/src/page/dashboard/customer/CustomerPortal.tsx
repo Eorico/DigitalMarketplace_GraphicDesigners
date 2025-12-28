@@ -1,8 +1,16 @@
 import { Search, ShoppingCart } from 'lucide-react';
 import { Outlet } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../../../style/customerPortal.css';
 
 export function CustomerPortal() {
+  const navigate = useNavigate();
+
+  const cartButton = () => {
+    navigate(
+      '/customer/view-carts'
+    )
+  }
   return (
     <div className="customer-portal">
       <header className="customer-header">
@@ -18,7 +26,7 @@ export function CustomerPortal() {
             </div>
           </div>
 
-          <button className="customer-cart-button">
+          <button className="customer-cart-button" onClick={() => cartButton()}>
             <ShoppingCart size={30} color='#ffffffff'/>
             <span className="customer-cart-text">Cart {}</span>
           </button>

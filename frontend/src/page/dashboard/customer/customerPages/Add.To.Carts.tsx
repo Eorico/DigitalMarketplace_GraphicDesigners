@@ -3,14 +3,17 @@ import { Trash2 } from "lucide-react";
 import '../../../../style/customerPortal.css'
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useOrders } from "./contextConnections/Orders.Context";
 
 export default function AddtoCart () {
     const { cartProducts, removeFromCart, clearCart} = useCart();
     const [selectedProduct, setSelectedProduct] = useState<any>(null);
     const [paymentmethod, setPaymentMethotd] = useState<string>('');
+    const {addOrder} = useOrders();
     const navigate = useNavigate();
 
     const handleProceed = () => {
+        addOrder(cartProducts);
         clearCart();
         navigate(
             '/customer/orders', {
@@ -94,9 +97,25 @@ export default function AddtoCart () {
                                         value="paypal"
                                         onChange={()=>setPaymentMethotd('PayPal')}
                                     />
-                                    Gcash
+                                    PayPal
                                 </label>
 
+                            </div>
+
+                            <div className="checkout-modal-actions">
+                                <button
+                                    onClick={() => setSelectedProduct(null)}
+                                >
+                                    Cancel
+                                </button>
+
+                                <button
+                                    disabled={!paymentmethod}
+                                    onClick={handleProceed}
+                                >
+                                    Proceed to Buy
+                                </button>
+                                
                             </div>
 
                         </div>

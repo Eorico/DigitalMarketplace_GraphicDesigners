@@ -40,6 +40,10 @@ export interface AddToCartContext {
     removeFromCart: (item: string) => void;
     clearCart: () => void;
 }
+export interface OrdersContext {
+    orders: Products[];
+    addOrder: (product: Products[]) => void;
+}
 
 export interface SellerProducts extends Products {
     status: 'active' | 'paused';

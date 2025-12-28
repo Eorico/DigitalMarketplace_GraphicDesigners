@@ -6,6 +6,7 @@ import '../../../style/selectorPath.css'
 
 import { FavoritesProviderContext } from "../customer/customerPages/contextConnections/Fav.Context";
 import { CartProviderContext } from "../customer/customerPages/contextConnections/Add.To.Cart.Context";
+import { OrdersProviderContext } from "../customer/customerPages/contextConnections/Orders.Context";
 
 export default function UserSelectorPath({ type = 'customer'}: { type: 'customer' | 'seller' } ) {
     const [ portalType ] = useState<'customer' | 'seller'>(type);
@@ -13,20 +14,22 @@ export default function UserSelectorPath({ type = 'customer'}: { type: 'customer
     return (
         <CartProviderContext>
             <FavoritesProviderContext>
-                <div className="selector">
-                    <Sidebar 
-                        type={portalType}
-                        cartCount={0}
-                        productCount={0}
-                        
-                    />
-                    <div className="selector-content"> 
-                        { portalType === 'customer' ?
-                        <CustomerRoutes  /> : 
-                        <SellerRoutes />
-                        } 
+                <OrdersProviderContext> 
+                    <div className="selector">
+                        <Sidebar 
+                            type={portalType}
+                            cartCount={0}
+                            productCount={0}
+                            
+                        />
+                        <div className="selector-content"> 
+                            { portalType === 'customer' ?
+                            <CustomerRoutes  /> : 
+                            <SellerRoutes />
+                            } 
+                        </div>
                     </div>
-                </div>
+                </OrdersProviderContext>
             </FavoritesProviderContext>
         </CartProviderContext>
     );

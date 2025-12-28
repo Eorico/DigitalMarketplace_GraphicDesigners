@@ -19,7 +19,8 @@ export function CartProviderContext
 {
     const [cartProducts, setCartProducts] = useState<Products[]>([]);
 
-    const addToCart = (product: Products) => {
+    const addToCart = (product: Products) => 
+    {
         setCartProducts(
             (prev) => {
                 const exist = prev.find((p) => p.id === product.id);
