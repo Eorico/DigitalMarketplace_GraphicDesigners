@@ -105,6 +105,7 @@ export default function AddtoCart () {
                             <div className="checkout-modal-actions">
                                 <button
                                     onClick={() => setSelectedProduct(null)}
+                                    className="cancel-btn-cart"
                                 >
                                     Cancel
                                 </button>
@@ -112,6 +113,7 @@ export default function AddtoCart () {
                                 <button
                                     disabled={!paymentmethod}
                                     onClick={handleProceed}
+                                    className="proceed-btn cancel-btn-cart"
                                 >
                                     Proceed to Buy
                                 </button>
