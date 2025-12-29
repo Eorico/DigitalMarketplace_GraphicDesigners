@@ -7,9 +7,6 @@ export default function ViewOrders () {
     const {addToCart} = useCart();
     return (
         <div className="orders-page">
-            <div className="order-header">
-                PURCHASE ORDERS
-            </div>
             {
                 orders.length === 0 ? (
                     <div className="no-orders-message no-favorites" style={{ marginTop: -40 }}>
@@ -18,18 +15,25 @@ export default function ViewOrders () {
                     </div>
                 ) : (
                     orders.map((orderedItem) => (
-                        <div key={orderedItem.id} className="order-item ">
-                           <img src={orderedItem.image} alt={orderedItem.title} />
+                        <div className="orders">
+                            <div className="order-header">
+                                <h2>REVIEW PURCHASED PRODUCTS</h2>
+                            </div>
 
-                           <div className="order-info">
-                            <h4>{orderedItem.title}</h4>
-                            <span>Pesos {orderedItem.price}</span>
-                           </div>
+                            <div key={orderedItem.id} className="order-item ">
+                                <img src={orderedItem.image} alt={orderedItem.title} />
 
-                           <button className="buy-again-btn" onClick={() => addToCart(orderedItem)}>
-                                Buy Again
-                           </button>
+                                <div className="order-info">
+                                    <h4>{orderedItem.title}</h4>
+                                    <span>Pesos {orderedItem.price}</span>
+                                </div>
+
+                                <button className="buy-again-btn" onClick={() => addToCart(orderedItem)}>
+                                        Buy Again
+                                </button>
+                            </div>
                         </div>
+                        
                     ))
                 )
             }
