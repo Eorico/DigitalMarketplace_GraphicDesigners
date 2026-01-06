@@ -71,3 +71,24 @@ export interface Statistics {
     avgRating: number;
     totalReviews: number;
 }
+
+export interface CustomerInfoProfile {
+    name: string;
+    email: string;
+    phoneNumber: number;
+    address: string;
+    country: string;
+    city: string;
+    brgy: string;
+    state: string;
+    zipCode: number;
+    joinDate: string;
+    verified?: boolean;
+}
+
+export interface SellerInfoProfile extends CustomerInfoProfile {
+    storeName: string;
+    bio: string;
+    bankAccount: string;
+    textId: string;
+}
